@@ -35,11 +35,19 @@ async function checkWeather(city) {
 
     document.querySelector(".error").style.display = "none";
     document.querySelector(".weather").style.display = "block";
-    
   }
 }
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+
+  let valueOfİnput = searchBox.value.trim();
+
+  if (valueOfİnput == "") {
+    alert(
+      "A blank cell cannot be entered. Please enter a city or country name"
+    );
+  }
+
   searchBox.value = "";
 });
